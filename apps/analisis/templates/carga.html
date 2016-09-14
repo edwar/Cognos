@@ -1,0 +1,20 @@
+{% extends 'base-analisis.html' %}
+{% load staticfiles %}
+{% block titulo %}
+Carga
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/carga.css' %}">
+{% endblock %}
+{% block contenido %}
+ <div class="container">
+  <div class="row text-center">
+      <div class="col-lg-4 col-lg-offset-4">
+        <div class="form-group">
+            <label>Bootstrap style button 1</label>
+            <input type="file" id="BSbtndanger" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);"><div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="" disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="BSbtndanger" class="btn btn-danger "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span> <span class="buttonText"> File selection</span></label></span></div>
+        </div>
+      </div>
+  </div>
+ </div>
+{% endblock %}

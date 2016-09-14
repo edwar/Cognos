@@ -1,0 +1,41 @@
+{% extends 'base-analisis.html' %}
+{% load staticfiles %}
+{% block titulo %}
+Analisis
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/analisis.css' %}">
+{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div class="row text-center">
+      <h1 class="text-center">Analisis de datos</h1>
+    <div class="col-sm-12">
+      <p>
+        <a href="#" class="btn btn-sq-lg btn-primary">
+            _________________________ <br>
+            <i class="ion ion-ios-cloud-upload"></i><br/>
+            Cargar archivo <br>_________________________
+        </a>
+        <a href="#" class="btn btn-sq-lg btn-success">
+          _________________________ <br>
+          <i class="ion ion-trophy"></i><br/>
+          Lista de cargas<br>_________________________
+        </a>
+        {% if request.user.is_staff %}
+            <a href="#" class="btn btn-sq-lg btn-info">
+               _________________________ <br>
+               <i class="ion ion-folder"></i><br/>
+               Todo <br>_________________________
+            </a>
+            <a href="#" class="btn btn-sq-lg btn-warning">
+               _________________________ <br>
+               <i class="ion ion-ios-people"></i><br/>
+               Usuarios <br>_________________________
+            </a>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
