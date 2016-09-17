@@ -1,2 +1,106 @@
 {% extends 'base-analisis.html' %}
 {% load staticfiles %}
+{% block titulo %}
+Todo
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+{% endblock %}
+{% block contenido %}
+ <div class="container">
+  <div class="row text-center">
+      <div class="col-sm-12">
+        <div class="table-responsive">
+           <table class="table table-bordered table-hover">
+                {% if datos %}
+                    <tr>
+                        {% for campo in campos %}
+                            {% if campo != "csrfmiddlewaretoken" %}
+                                <th>{{ campo }}</th>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endif %}
+                {% if datos %}
+                    {% for dato in datos %}
+                        <tr>
+                            {% for campo in campos %}
+                                {% if campo == 'Producto' %}
+                                    <td>{{dato.producto}}</td>
+                                {% endif %}
+                                {% if campo == 'Cliente' %}
+                                    <td>{{dato.cliente}}</td>
+                                {% endif %}
+                                {% if campo == 'Tipo de cliente' %}
+                                    <td>{{dato.tipocliente}}</td>
+                                {% endif %}
+                                {% if campo == 'Pais' %}
+                                    <td>{{dato.pais}}</td>
+                                {% endif %}
+                                {% if campo == 'Ciudad' %}
+                                    <td>{{dato.ciudad}}</td>
+                                {% endif %}
+                                {% if campo == 'Zona' %}
+                                    <td>{{dato.zona}}</td>
+                                {% endif %}
+                                {% if campo == 'Estado' %}
+                                    <td>{{dato.estado}}</td>
+                                {% endif %}
+                                {% if campo == 'Punto de venta' %}
+                                    <td>{{dato.puntoventa}}</td>
+                                {% endif %}
+                                {% if campo == 'Tipo de producto' %}
+                                    <td>{{dato.tipoproducto}}</td>
+                                {% endif %}
+                                {% if campo == 'Fecha' %}
+                                    <td>{{dato.fecha}}</td>
+                                {% endif %}
+                                {% if campo == 'Año' %}
+                                    <td>{{dato.ano}}</td>
+                                {% endif %}
+                                {% if campo == 'Mes en numero' %}
+                                    <td>{{dato.mesnumero}}</td>
+                                {% endif %}
+                                {% if campo == 'Mes' %}
+                                    <td>{{dato.mes}}</td>
+                                {% endif %}
+                                {% if campo == 'Dia' %}
+                                    <td>{{dato.dia}}</td>
+                                {% endif %}
+                                {% if campo == 'Semestre' %}
+                                    <td>{{dato.semestre}}</td>
+                                {% endif %}
+                                {% if campo == 'Trimestre' %}
+                                    <td>{{dato.trimestre}}</td>
+                                {% endif %}
+                                {% if campo == 'Semana' %}
+                                    <td>{{dato.semana}}</td>
+                                {% endif %}
+                                {% if campo == 'Dia de la semana' %}
+                                    <td>{{dato.diasemana}}</td>
+                                {% endif %}
+                                {% if campo == 'Empleado' %}
+                                    <td>{{dato.empleado}}</td>
+                                {% endif %}
+                                {% if campo == 'Cargo' %}
+                                    <td>{{dato.cargo}}</td>
+                                {% endif %}
+                                {% if campo == 'Cantidad de ventas' %}
+                                    <td>{{dato.cantidadventas}}</td>
+                                {% endif %}
+                                {% if campo == 'Cantidad de productos' %}
+                                    <td>{{dato.cantidadproductos}}</td>
+                                {% endif %}
+                                {% if campo == 'Valor de venta' %}
+                                    <td>{{dato.valorventa}}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+           </table>
+        </div>
+      </div>
+  </div>
+ </div>
+{% endblock %}

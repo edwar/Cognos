@@ -1,0 +1,136 @@
+{% extends 'base-analisis.html' %}
+{% load staticfiles %}
+{% block titulo %}
+Todo
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+{% endblock %}
+{% block contenido %}
+ <div class="container">
+  <div class="row">
+      <div class="col-sm-6 col-sm-offset-4">
+        <form action="/analisis/todo/" method="POST">{% csrf_token %}
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Producto" type="checkbox" value="producto">Producto</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Cliente" type="checkbox" value="cliente">Cliente</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Tipo de cliente" type="checkbox" value="tipocliente">Tipo de cliente</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Pais" type="checkbox" value="pais">Pais</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Ciudad" type="checkbox" value="ciudad">Ciudad</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Zona" type="checkbox" value="zona">Zona</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Estado" type="checkbox" value="estado">Estado</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Punto de venta" type="checkbox" value="puntoventa">Punto de venta</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Tipo de producto" type="checkbox" value="tipoproducto">Tipo de producto</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Fecha" type="checkbox" value="fecha">Fecha</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Año" type="checkbox" value="ano">Año</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Mes en numero" type="checkbox" value="mesnumero">Mes en numero</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Mes" type="checkbox" value="mes">Mes</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Dia" type="checkbox" value="dia">Dia</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Semestre" type="checkbox" value="semestre">Semestre</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Trimestre" type="checkbox" value="trimestre">Trimestre</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Semana" type="checkbox" value="semana">Semana</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Dia de la semana" type="checkbox" value="diasemana">Dia de la semana</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Empleado" type="checkbox" value="empleado">Empleado</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Cargo" type="checkbox" value="cargo">Cargo</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Cantidad de ventas" type="checkbox" value="cantidadventas">Cantidad de ventas</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Cantidad de productos" type="checkbox" value="cantidadproductos">Cantidad de productos</label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <div class="checkbox">
+                  <label><input name="Valor de venta" type="checkbox" value="valorventa">Valor de venta</label>
+                </div>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3">
+                <button type="submit" class="btn btn-success">Cargar</button>
+            </div>
+        </form>
+      </div>
+  </div>
+ </div>
+{% endblock %}

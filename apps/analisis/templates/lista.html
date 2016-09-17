@@ -1,2 +1,44 @@
 {% extends 'base-analisis.html' %}
 {% load staticfiles %}
+{% block titulo %}
+Lista de archivos
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/general.css' %}">
+{% endblock %}
+{% block contenido %}
+{% if archivos %}
+     <div class="container">
+          <div class="row text-center">
+              <div class="col-lg-6 col-lg-offset-3">
+                <h1>Lista de archivos</h1>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                        {% for archivo in archivos %}
+                            <tr>
+                                <td>
+                                    {{ archivo.nombre }}
+                                </td>
+                                <td>
+                                    <button class="btn btn-success">Ver <span class="ion-document-text"></span></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+              </div>
+          </div>
+    </div>
+{% else %}
+     <div class="container">
+          <div class="row text-center">
+              <div class="col-lg-6 col-lg-offset-3">
+                <h1>Ups</h1>
+              </div>
+          </div>
+    </div>
+{% endif %}
+{% endblock %}

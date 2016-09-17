@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import InicioView, login, LandingView, LogoutView, ExcelCreate
+from .views import InicioView, login, LandingView, LogoutView, ExcelCreate, ArchivoView, UsuariosList, TodoView
 
 urlpatterns = [
     url(r'^$', InicioView.as_view(), name='inicio'),
@@ -7,4 +7,7 @@ urlpatterns = [
     url(r'^inicio/$', LandingView.as_view()),
     url(r'^salir/$', LogoutView.as_view()),
     url(r'^cargar/$', ExcelCreate.as_view()),
+    url(r'^archivos/$', ArchivoView.as_view()),
+    url(r'^usuarios/$', UsuariosList.as_view()),
+    url(r'^todo/$', TodoView.as_view())
 ]

@@ -1,2 +1,57 @@
 {% extends 'base-analisis.html' %}
 {% load staticfiles %}
+{% block titulo %}
+Lista de archivos
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/general.css' %}">
+{% endblock %}
+{% block contenido %}
+{% if usuarios %}
+     <div class="container">
+          <div class="row text-center">
+              <div class="col-lg-12">
+                <h1>Lista de usuarios</h1>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th class="text-center">Usuario</th>
+                            <th class="text-center">Activo</th>
+                            <th class="text-center">Administrador</th>
+                        </tr>
+                        {% for usuario in usuarios %}
+                            <tr>
+                                <td>
+                                    {{ usuario.username }}
+                                </td>
+                                <td>
+                                    {% if usuario.is_active %}
+                                        <span class="ion-checkmark-circled text-success"></span>
+                                    {% else %}
+                                        <span class="ion-close-circled text-danger"></span>
+                                    {% endif %}
+
+                                </td>
+                                <td>
+                                    {% if usuario.is_staff %}
+                                        <span class="ion-checkmark-circled text-success"></span>
+                                    {% else %}
+                                        <span class="ion-close-circled text-danger"></span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+              </div>
+          </div>
+    </div>
+{% else %}
+     <div class="container">
+          <div class="row text-center">
+              <div class="col-lg-6 col-lg-offset-3">
+                <h1>Ups</h1>
+              </div>
+          </div>
+    </div>
+{% endif %}
+{% endblock %}
