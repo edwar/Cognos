@@ -16,7 +16,7 @@ Todo
                     <tr>
                         {% for campo in campos %}
                             {% if campo != "csrfmiddlewaretoken" %}
-                                <th>{{ campo }}</th>
+                                <th>{{ campo|capfirst }}</th>
                             {% endif %}
                         {% endfor %}
                     </tr>
@@ -93,6 +93,12 @@ Todo
                                 {% endif %}
                                 {% if campo == 'Valor de venta' %}
                                     <td>{{dato.valorventa}}</td>
+                                {% endif %}
+                                {% if campo == 'archivo' %}
+                                    <td>{{dato.archivo}}</td>
+                                {% endif %}
+                                {% if campo == 'usuario' %}
+                                    <td>{{dato.user.username}}</td>
                                 {% endif %}
                             {% endfor %}
                         </tr>

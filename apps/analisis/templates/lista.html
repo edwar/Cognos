@@ -24,7 +24,7 @@ Lista de archivos
                                     {{ archivo.nombre }}
                                 </td>
                                 <td>
-                                    <button class="btn btn-success">Ver <span class="ion-document-text"></span></button>
+                                    <a href="/analisis/detalle/{{ archivo.nombre }}/{{ archivo.usuario.username }}/" class="btn btn-success">Ver <span class="ion-document-text"></span></a>
                                 </td>
                             </tr>
                         {% endfor %}

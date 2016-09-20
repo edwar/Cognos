@@ -95,8 +95,19 @@ class TodoView(View):
         return render(request, 'todo.html')
 
     def post(self, request, *args, **kwargs):
-        Datos = Excel.objects.all()
+        print request.POST
+        if request.POST['archivo']:
+            archivo = request.POST['archivo']
+            Datos = Excel.objects.filter(archivo__nombre=archivo)
+        else:
+            Datos = Excel.objects.all()
         return render(request, 'lista-carga.html', {'datos': Datos, 'campos':request.POST})
+
+class DetalleView(View):
+    def get(self, request, *args, **kwargs):
+        archivo = self.kwargs['archivo']
+        usuario = self.kwargs['usuario']
+        return render(request, 'todo.html', {'archivo':archivo, 'usuario':usuario})
 
 def login(request):
     if request.POST:
