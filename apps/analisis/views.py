@@ -24,6 +24,9 @@ class LogoutView(RedirectView):
 class LandingView(TemplateView):
     template_name = 'analisis.html'
 
+class EtlView(TemplateView):
+    template_name = 'etl.html'
+
 class ExcelCreate(View):
 
     def get(self, request, *args, **kwargs):
