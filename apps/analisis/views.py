@@ -112,6 +112,10 @@ class DetalleView(View):
         usuario = self.kwargs['usuario']
         return render(request, 'todo.html', {'archivo':archivo, 'usuario':usuario})
 
+class GraficaView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'pdf.html')
+
 def login(request):
     if request.POST:
         username = request.POST['username']

@@ -13,23 +13,21 @@ Analisis
       <h1 class="text-center">Analisis de datos</h1>
     <div class="col-sm-4 col-sm-offset-4">
       <p>
-        {% if request.user.is_staff %}
-            <div id="resp"></div>
-            <div class="progress" style="display: none;">
-                <div id="theBar" class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                    0%
-                </div>
+        <div id="resp"></div>
+        <div class="progress" style="display: none;">
+            <div id="theBar" class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                0%
             </div>
-            <form>
-                <div class="form-group">
-                    <input size="16" type="text" placeholder="Inicio" readonly class="form_datetime form-control">
-                </div>
-                <div class="form-group">
-                    <input size="16" type="text" placeholder="Fin" readonly class="form_datetime form-control">
-                </div>
-                <button type="button" id="time" class="btn btn-lg btn-success">Ejecutar ETL <i class="fa fa-database fa-2x" aria-hidden="true"></i></button>
-            </form>
-        {% endif %}
+        </div>
+        <form>
+            <div class="form-group">
+                <input size="16" type="text" placeholder="Inicio" readonly class="form_datetime form-control">
+            </div>
+            <div class="form-group">
+                <input size="16" type="text" placeholder="Fin" readonly class="form_datetime form-control">
+            </div>
+            <button type="button" id="time" class="btn btn-lg btn-success">Ejecutar bodega de datos <i class="fa fa-database fa-2x" aria-hidden="true"></i></button>
+        </form>
       </p>
     </div>
   </div>
