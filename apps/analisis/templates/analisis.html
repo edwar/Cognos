@@ -33,6 +33,11 @@ Analisis
                <i class="ion ion-ios-people"></i><br/>
                Usuarios <br>_________________________
             </a>
+                <a href="#" class="btn btn-sq-lg btn-success active rotar">
+                _________________________ <br>
+                <i class="ion ion-ios-reload"></i><br/>
+                Construcción ETL<br>_________________________
+             </a>
         {% endif %}
         <a href="/analisis/etl/" class="btn btn-sq-lg btn-success">
            _________________________ <br>
@@ -40,11 +45,6 @@ Analisis
            Bodega de datos<br>_________________________
         </a>
         {% if not request.user.is_staff%}
-         <a href="#" class="btn btn-sq-lg btn-success active rotar">
-           _________________________ <br>
-           <i class="ion ion-ios-reload"></i><br/>
-           Construcción ETL<br>_________________________
-         </a>
          <a href="{% static 'pdf/Grafica.pdf'%}" class="btn btn-sq-lg btn-info active">
            _________________________ <br>
            <i class="ion ion-pie-graph"></i><br/>
